@@ -52,6 +52,6 @@ Describe "Day 3 Task 1" {
 
 Describe "Day 3 Task 2" {
     It "Calculates example data correctly" {
-        
+        Invoke-Day3Task2 -Map $day3test | Should -Be 336
     }
 }

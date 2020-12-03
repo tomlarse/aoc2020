@@ -37,6 +37,14 @@ function Invoke-Day3Task1 {
 
 function Invoke-Day3Task2 {
     param (
-        $entries
+        $map,
+        $slopes = @(@{down = 1; right = 1 }, @{down = 1; right = 3 }, @{down = 1; right = 5 }, @{down = 1; right = 7 }, @{down = 2; right = 1 })
     )
+
+    $total = 1
+
+    foreach ($slope in $slopes) {
+        $total = $total*(Invoke-Day3Task1 -map $map -slope $slope)
+    }
+    $total
 }
